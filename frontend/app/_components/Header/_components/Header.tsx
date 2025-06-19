@@ -1,17 +1,20 @@
 import React from "react";
-import { BsHouseCheckFill, BsHouseFill } from "react-icons/bs";
+import { BsHouseCheckFill } from "react-icons/bs";
 
 type Props = {};
 
 export default function Header({}: Props) {
   return (
-    <div className="w-full  flex items-center justify-center py-4 fixed top-0 shadow-md">
+    <div className="w-full  flex items-center justify-center py-4 fixed top-0 px-10">
       <div className="w-wrapper flex justify-between items-center">
-        <div className="flex items-center gap-2 font-semibold font-oswald">
+        <a
+          href="/"
+          className="flex items-center gap-2 font-semibold font-oswald"
+        >
           <BsHouseCheckFill className="text-4xl text-primary" />
-          <p className="text-3xl lowercase mt-[-5px] text-textPrimary">Reas</p>
-        </div>
-        <ul className="flex gap-10 items-center font-semibold *:not-last:hover:text-primary *:not-last:transition-all *:not-last:ease-in-out font-oswald text-textPrimary">
+          <p className="text-3xl lowercase mt-[-5px] text-textLight">Reas</p>
+        </a>
+        <ul className="flex gap-10 items-center font-semibold *:not-last:hover:text-primary *:not-last:transition-all *:not-last:ease-in-out font-oswald text-textLight">
           <li>
             <a href="/nabidka">Nabídka nemovitostí</a>
           </li>
@@ -22,8 +25,8 @@ export default function Header({}: Props) {
             <a href="/nabidka">Kontakt</a>
           </li>
           <li>
-            <button className="uppercase font-medium p-2 px-4 font-oswald bg-sky-500 rounded-lg text-lg text-white flex shadow-md cursor-pointer hover:scale-105 ease-in-out transition-all">
-              Chci prodat nemovitost
+            <button className="buttonBasics font-medium p-2 px-4 hover:scale-105 ">
+              uživatelský účet
             </button>
           </li>
         </ul>

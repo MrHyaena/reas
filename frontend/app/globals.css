@@ -21,3 +21,11 @@
 
   --spacing-wrapper: 1400px;
 }
+
+h1 {
+  @apply text-7xl font-oswald uppercase;
+}
+
+.buttonBasics {
+  @apply bg-sky-500 rounded-sm  uppercase font-oswald  text-white shadow-md cursor-pointer ease-in-out transition-all;
+}
