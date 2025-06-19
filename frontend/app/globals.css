@@ -17,7 +17,7 @@
 
   --color-overlay: var(--color-zinc-950);
 
-  --color-borderGray: var(--color-slate-200);
+  --color-borderGray: var(--color-slate-500);
 
   --spacing-wrapper: 1400px;
 }
@@ -30,6 +30,10 @@ h2 {
   @apply text-6xl font-oswald uppercase;
 }
 
+h3 {
+  @apply text-5xl font-oswald uppercase;
+}
+
 .buttonBasics {
-  @apply bg-sky-500 rounded-sm  uppercase font-oswald  text-white shadow-md cursor-pointer ease-in-out transition-all;
+  @apply bg-sky-500 rounded-sm  uppercase font-oswald hover:shadow-[5px_5px_0px_0px] shadow-white text-white  cursor-pointer ease-in-out transition-all;
 }

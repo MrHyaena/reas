@@ -16,7 +16,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
     "Formulář má dvě části",
     "Nejprve vyplníte osobní údaje, abychom s vámi měli spojení",
     "Následně nám popíšete vaši nemovitost",
-    "A to je všechno! Teď už jen chvílku počkáte na vytvoření účtu a můžeme společně prodávat",
+    "A to je všechno! Teď už jen chvilku počkáte na vytvoření účtu a můžeme společně prodávat",
     "Pojďme společně na to",
   ];
 
@@ -25,7 +25,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
       <div className="grid grid-cols-[1fr_4fr_1fr] items-center justify-items-center w-[80%]">
         {text != 0 && (
           <>
-            <div className="p-2 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out">
+            <div className="p-2 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out hover:shadow-[4px_4px_0px_0px] shadow-white">
               <FaChevronLeft
                 className="text-textLight text-2xl "
                 onClick={() => {
@@ -39,7 +39,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
           <h2 className="text-textLight  text-center leading-[80px]">
             {textsArray[text]}
           </h2>
-          {text == textsArray.length - 1 && (
+          {text == textsArray.length - 1 ? (
             <button
               onClick={() => {
                 setformPart(2);
@@ -48,11 +48,20 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
             >
               Přejít na formulář
             </button>
+          ) : (
+            <button
+              onClick={() => {
+                setformPart(2);
+              }}
+              className="text-textLight font-oswald uppercase text-lg cursor-pointer p-2 hover:bg-primary hover:shadow-[5px_5px_0px_0px] shadow-white transition-all ease-in-out rounded-sm"
+            >
+              Přejít na formulář
+            </button>
           )}
         </div>
         {text < textsArray.length - 1 && (
           <>
-            <div className="p-2 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out col-start-3">
+            <div className="p-2 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out col-start-3 hover:shadow-[4px_4px_0px_0px] shadow-white">
               <FaChevronRight
                 className="text-textLight text-2xl "
                 onClick={() => {
