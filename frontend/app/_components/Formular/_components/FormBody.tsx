@@ -4,6 +4,7 @@ import { colorScheme } from "@/app/_data/colors";
 import { mapData } from "@/app/_data/mapData";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { setEnvironmentData } from "worker_threads";
 
 export type PersonalInfoType = {
   firstName: string;
@@ -15,6 +16,7 @@ export type PersonalInfoType = {
 const headings: string[] = ["Osobní údaje", "Typ nemovitosti", "Vyberte okres"];
 
 export function FormBody() {
+  //Data from whole formular process
   const [personalInfo, setPersonalInfo] = useState<PersonalInfoType>({
     firstName: "",
     secondName: "",
@@ -25,8 +27,10 @@ export function FormBody() {
   const [okres, setOkres] = useState<string>("");
   const [kraj, setKraj] = useState<string>("");
 
+  //Step of the formular
   const [formBodyPart, setFormBodyPart] = useState<number>(0);
 
+  //Form parts ###################################################################x
   function PersonalInfo({
     setPersonalInfo,
   }: {
@@ -45,57 +49,94 @@ export function FormBody() {
 
     function Input({
       label,
-      value,
       setter,
     }: {
       label: string;
-      value: string;
       setter: React.Dispatch<React.SetStateAction<string>>;
     }) {
+      const [inputState, setInputState] = useState<string | number>("value");
       return (
         <>
           {" "}
           <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
             {label}
             <input
-              defaultValue={value}
+              value={inputState}
               className="bg-slate-600 p-2  rounded-sm border-2 border-slate-700"
-              onBlur={(e) => {
+              onChange={(e) => {
                 setter(e.target.value);
+                setInputState(e.target.value);
               }}
             ></input>
           </label>
         </>
       );
     }
+
+    function NextStep() {
+      setFormBodyPart(formBodyPart + 1);
+      SaveData();
+    }
     return (
       <>
-        <div className="flex flex-col items-center gap-10 w-full">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            NextStep();
+          }}
+          className="flex flex-col items-center gap-10 w-full"
+        >
           <h3 className="text-textLight">{headings[formBodyPart]}</h3>
           <div className="grid grid-cols-2 gap-5 w-[50%]">
-            <Input
-              label="Křestní jméno"
-              value={firstName}
-              setter={setFirstName}
-            />
-            <Input
-              label="Příjmení:"
-              value={secondName}
-              setter={setSecondName}
-            />
-            <Input label="Email:" value={email} setter={setEmail} />
-            <Input label="Telefon:" value={phone} setter={setPhone} />
+            <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+              Křestní jméno:
+              <input
+                value={firstName}
+                className="bg-slate-600 p-2  rounded-sm border-2 border-slate-700"
+                onChange={(e) => {
+                  setFirstName(e.target.value);
+                }}
+              ></input>
+            </label>
+            <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+              Příjmení:
+              <input
+                value={secondName}
+                className="bg-slate-600 p-2  rounded-sm border-2 border-slate-700"
+                onChange={(e) => {
+                  setSecondName(e.target.value);
+                }}
+              ></input>
+            </label>
+            <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+              Email:
+              <input
+                value={email}
+                className="bg-slate-600 p-2  rounded-sm border-2 border-slate-700"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              ></input>
+            </label>
+            <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+              Telefon:
+              <input
+                pattern="[0-9]"
+                value={phone}
+                className="bg-slate-600 p-2  rounded-sm border-2 border-slate-700"
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
+              ></input>
+            </label>
           </div>
           <button
-            onClick={() => {
-              setFormBodyPart(formBodyPart + 1);
-              SaveData();
-            }}
+            type="submit"
             className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
           >
             Pokračovat
           </button>
-        </div>
+        </form>
       </>
     );
   }
