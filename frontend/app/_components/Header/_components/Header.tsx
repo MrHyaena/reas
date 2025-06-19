@@ -14,20 +14,26 @@ export default function Header({}: Props) {
           <BsHouseCheckFill className="text-4xl text-primary" />
           <p className="text-3xl lowercase mt-[-5px] text-textLight">Reas</p>
         </a>
-        <ul className="flex gap-10 items-center font-semibold *:not-last:hover:text-primary *:not-last:transition-all *:not-last:ease-in-out font-oswald text-textLight">
+        <ul className="flex gap-10 items-center *:not-last:hover:text-primary *:not-last:transition-all *:not-last:ease-in-out font-oswald text-textLight">
           <li>
-            <a href="/nabidka">Nabídka nemovitostí</a>
+            <a href="https://www.reas.cz/prodej/nemovitosti">
+              Nabídka nemovitostí
+            </a>
           </li>
           <li>
-            <a href="/nabidka">Realitní služby</a>
+            <a href="https://www.reas.cz/realitni-makleri">
+              Přehled realitních makléřů
+            </a>
           </li>
           <li>
-            <a href="/nabidka">Kontakt</a>
+            <a href="https://www.reas.cz/kontakt">Kontakt</a>
           </li>
           <li>
-            <button className="buttonBasics font-medium p-2 px-4 hover:scale-105 ">
-              uživatelský účet
-            </button>
+            <a href="https://www.reas.cz/prihlasit">
+              <button className="buttonBasics font-medium p-2 px-4 hover:scale-105 ">
+                uživatelský účet
+              </button>
+            </a>
           </li>
         </ul>
       </div>
