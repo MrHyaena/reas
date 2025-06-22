@@ -22,10 +22,10 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
 
   return (
     <>
-      <div className="grid grid-cols-[1fr_4fr_1fr] items-center justify-items-center w-[80%]">
+      <div className="grid grid-cols-[1fr_4fr_1fr] items-start justify-items-center w-[80%]">
         {text != 0 && (
           <>
-            <div className="p-2 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out hover:shadow-[4px_4px_0px_0px] shadow-white">
+            <div className="p-2 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out hover:shadow-[4px_4px_0px_0px] shadow-white">
               <FaChevronLeft
                 className="text-textLight text-2xl "
                 onClick={() => {
@@ -61,7 +61,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
         </div>
         {text < textsArray.length - 1 && (
           <>
-            <div className="p-2 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out col-start-3 hover:shadow-[4px_4px_0px_0px] shadow-white">
+            <div className="p-2 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out col-start-3 hover:shadow-[4px_4px_0px_0px] shadow-white">
               <FaChevronRight
                 className="text-textLight text-2xl "
                 onClick={() => {
