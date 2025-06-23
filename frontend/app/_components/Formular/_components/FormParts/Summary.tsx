@@ -3,7 +3,6 @@ import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { FaHouseChimney } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import {
-  DataForSubmitType,
   KrajType,
   OkresType,
   PersonalInfoType,
@@ -25,14 +24,14 @@ export function Summary({
   personalInfo: PersonalInfoType;
   setFormBodyPart: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  function SubmitForm() {
-    const dataForSubmit: DataForSubmitType = {
-      personalInfo: personalInfo,
-      realEstateCategory: realEstateCategory,
-      kraj: kraj,
-      okres: okres,
-    };
-  }
+  // function SubmitForm() {
+  // const dataForSubmit: DataForSubmitType = {
+  // personalInfo: personalInfo,
+  // realEstateCategory: realEstateCategory,
+  // kraj: kraj,
+  // okres: okres,
+  // };
+  // }
 
   return (
     <>

@@ -49,7 +49,7 @@ export function RepublicMap({
     return (
       <path
         className={`hover:fill-primary hover:stroke-2 ${bgcolor} cursor-pointer transition-all ease-in-out ${stroke}`}
-        onClick={(e) => {
+        onClick={() => {
           setKrajName({
             name: name,
             value: value,

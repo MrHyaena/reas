@@ -1,12 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { BsHouseCheckFill } from "react-icons/bs";
 import { TiThMenu } from "react-icons/ti";
 
-type Props = {};
-
-export default function Header({}: Props) {
+export default function Header() {
   const [menuToggle, setMenuToggle] = useState(false);
 
   function DesktopHeader() {
@@ -52,8 +51,7 @@ export default function Header({}: Props) {
       <>
         <div className="flex flex-col gap-10 w-wrapper md:hidden">
           <div className="flex justify-between">
-            {" "}
-            <a
+            <Link
               href="/"
               className="flex items-center gap-2 font-semibold font-oswald"
             >
@@ -61,7 +59,7 @@ export default function Header({}: Props) {
               <p className="text-3xl lowercase mt-[-5px] text-textLight">
                 Reas
               </p>
-            </a>
+            </Link>
             <button
               onClick={() => {
                 setMenuToggle(!menuToggle);
