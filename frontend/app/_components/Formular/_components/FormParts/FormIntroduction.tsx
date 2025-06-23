@@ -17,13 +17,13 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
       <div className="grid md:grid-cols-[1fr_4fr_1fr] grid-cols-2 items-center justify-items-center md:max-w-[80%] md:gap-0 gap-y-5">
         {text != 0 && (
           <>
-            <div className="p-2 md:block hidden row-start-1 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out hover:shadow-[4px_4px_0px_0px] shadow-white ">
-              <FaChevronLeft
-                className="text-textLight text-2xl "
-                onClick={() => {
-                  setText(text - 1);
-                }}
-              />
+            <div
+              onClick={() => {
+                setText(text - 1);
+              }}
+              className="p-2 md:block hidden row-start-1 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out hover:shadow-[4px_4px_0px_0px] shadow-white "
+            >
+              <FaChevronLeft className="text-textLight text-2xl " />
             </div>
           </>
         )}
@@ -68,15 +68,15 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
         </div>
         {text < formIntroductionTexts.length - 1 && (
           <>
-            <div className="p-2 md:block hidden col-start-2 row-start-1 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out md:col-start-3 hover:shadow-[4px_4px_0px_0px] shadow-white">
-              <FaChevronRight
-                className="text-textLight text-2xl "
-                onClick={() => {
-                  if (text < formIntroductionTexts.length - 1) {
-                    setText(text + 1);
-                  }
-                }}
-              />
+            <div
+              onClick={() => {
+                if (text < formIntroductionTexts.length - 1) {
+                  setText(text + 1);
+                }
+              }}
+              className="p-2 md:block hidden col-start-2 row-start-1 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out md:col-start-3 hover:shadow-[4px_4px_0px_0px] shadow-white"
+            >
+              <FaChevronRight className="text-textLight text-2xl " />
             </div>
           </>
         )}
