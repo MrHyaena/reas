@@ -22,7 +22,7 @@ export type RegionType = {
 
 export type DataForSubmitType = {
   personalInfo: PersonalInfoType;
-  realEstateCategory: RealEstateCategoryType;
-  region: RegionType;
-  district: DistrictType;
+  realEstateCategory: string;
+  region: string;
+  district: string;
 };

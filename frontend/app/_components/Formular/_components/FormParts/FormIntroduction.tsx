@@ -58,7 +58,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
                   onClick={() => {
                     setText(text + 1);
                   }}
-                  className=" buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105 md:mt-10"
+                  className="md:hidden buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105 md:mt-10"
                 >
                   Pokračovat
                 </button>

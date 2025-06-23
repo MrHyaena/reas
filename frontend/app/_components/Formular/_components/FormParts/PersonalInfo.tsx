@@ -106,7 +106,6 @@ export function PersonalInfo({
               value={phone}
               className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
               onChange={(e) => {
-                console.log(/^[0-9]{0,9}$/.test(e.target.value));
                 if (/^[0-9]{0,9}$/.test(e.target.value)) {
                   setPhone(e.target.value);
                 }
