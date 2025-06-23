@@ -3,9 +3,9 @@
 import { useState } from "react";
 import * as validator from "validator";
 import { PersonalInfoType } from "../../_types/FormularTypes";
-import { Heading } from "../Headings/FormBodyHeading";
+import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
-import { ErrorMessage } from "../ErrorMessages/ErrorMessage";
+import { ErrorMessage } from "../../../ErrorMessages/_components/ErrorMessage";
 
 export function PersonalInfo({
   personalInfo,

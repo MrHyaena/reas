@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { KrajType, OkresType } from "../../_types/FormularTypes";
 import { mapData } from "@/app/_data/mapData";
-import { Heading } from "../Headings/FormBodyHeading";
+import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
-import { ErrorMessage } from "../ErrorMessages/ErrorMessage";
+import { ErrorMessage } from "../../../ErrorMessages/_components/ErrorMessage";
 
 export function RepublicMap({
   setOkres,
@@ -188,6 +188,8 @@ export function RepublicMap({
     <>
       <div className="flex flex-col items-center gap-10 w-full">
         <Heading text={headings[formBodyPart]} />
+        {error != null && <ErrorMessage text={error} />}
+
         <div className="md:grid flex flex-col grid-cols-2 gap-10 w-full items-start">
           <GenerateKrajMobile />
           <GenerateMap />
@@ -216,7 +218,6 @@ export function RepublicMap({
             Pokračovat
           </button>
         </div>
-        {error != null && <ErrorMessage text={error} />}
       </div>
     </>
   );

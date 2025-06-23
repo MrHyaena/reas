@@ -1,5 +1,5 @@
 import { headings } from "@/app/_data/formBodyHeadings";
-import { Heading } from "../Headings/FormBodyHeading";
+import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { FaHouseChimney } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import {

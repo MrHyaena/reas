@@ -6,10 +6,10 @@ import { FaHouseChimney, FaShop, FaVectorSquare } from "react-icons/fa6";
 import { MdApartment } from "react-icons/md";
 import { PiHouseLineFill } from "react-icons/pi";
 import { BsQuestionSquareFill } from "react-icons/bs";
-import { Heading } from "../Headings/FormBodyHeading";
+import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
 import { realEstateData } from "@/app/_data/realEstate";
-import { ErrorMessage } from "../ErrorMessages/ErrorMessage";
+import { ErrorMessage } from "../../../ErrorMessages/_components/ErrorMessage";
 
 export function RealEstateCategory({
   setRealEstateCategory,

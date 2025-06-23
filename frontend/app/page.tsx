@@ -9,10 +9,10 @@ export default function page() {
           <div className="flex flex-col items-start gap-8">
             <div className="flex flex-col items-start">
               <p className="text-primary font-bebas text-xl">
-                Digitální realitka bez provizí
+                Váš digitální společník pro prodej nemovitostí
               </p>
               <h1 className="text-textLight max-w-[700px] font-semibold">
-                Prodej nemovitosti
+                Prodejte nemovitost
                 <br /> bez realitky
               </h1>
             </div>
