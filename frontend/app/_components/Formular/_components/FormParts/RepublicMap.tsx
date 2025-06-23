@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { KrajType, OkresType } from "../../_types/FormularTypes";
 import { mapData } from "@/app/_data/mapData";
-import { Heading } from "../FormBodyHeading";
+import { Heading } from "../Headings/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
-import { ErrorMessage } from "../ErrorMessage";
+import { ErrorMessage } from "../ErrorMessages/ErrorMessage";
 
 export function RepublicMap({
   setOkres,
@@ -70,7 +70,7 @@ export function RepublicMap({
   function GenerateMap() {
     return (
       <>
-        <div>
+        <div className="hidden md:block">
           <svg
             className="w-full"
             version="1.1"
@@ -93,6 +93,40 @@ export function RepublicMap({
             </>
           </svg>
         </div>
+      </>
+    );
+  }
+
+  function GenerateKrajMobile() {
+    return (
+      <>
+        <select
+          defaultValue={krajName.value}
+          name="kraj"
+          id="kraj"
+          className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600 text-white w-full md:hidden"
+          onChange={(e) => {
+            const krajData = mapData.find(
+              (krajItem) => krajItem.value == e.target.value
+            );
+
+            if (krajData) {
+              const krajValue: KrajType = {
+                name: krajData.name,
+                value: krajData.value,
+              };
+              setKrajName(krajValue);
+            }
+          }}
+        >
+          {mapData.map((krajItem) => {
+            return (
+              <option key={"select" + krajItem.name} value={krajItem.value}>
+                {krajItem.name}
+              </option>
+            );
+          })}
+        </select>
       </>
     );
   }
@@ -132,7 +166,7 @@ export function RepublicMap({
               value: value,
             });
           }}
-          className={`p-3 ${color} ${shadow} text-nowrap rounded-sm text-textLight font-oswald text-lg cursor-pointer hover:bg-primary hover:shadow-[5px_5px_0px_0px] shadow-white transition-all ease-in-out`}
+          className={`md:p-3 p-2 ${color} ${shadow} text-nowrap rounded-sm text-textLight font-oswald md:text-lg cursor-pointer hover:bg-primary hover:shadow-[5px_5px_0px_0px] shadow-white transition-all ease-in-out`}
         >
           {name}
         </button>
@@ -154,7 +188,8 @@ export function RepublicMap({
     <>
       <div className="flex flex-col items-center gap-10 w-full">
         <Heading text={headings[formBodyPart]} />
-        <div className="grid grid-cols-2 gap-10 w-full items-start">
+        <div className="md:grid flex flex-col grid-cols-2 gap-10 w-full items-start">
+          <GenerateKrajMobile />
           <GenerateMap />
           <div className="flex items-center">
             <div className="flex gap-5 flex-wrap">
@@ -162,13 +197,13 @@ export function RepublicMap({
             </div>
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="grid grid-cols-2 gap-4 md:text-lg text-md font-semibold w-full md:w-auto">
           <button
             onClick={() => {
               setFormBodyPart(formBodyPart - 1);
               SaveData();
             }}
-            className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
+            className="buttonBasics md:px-4 p-2 md:py-3   hover:scale-105"
           >
             Zpět
           </button>
@@ -176,7 +211,7 @@ export function RepublicMap({
             onClick={() => {
               NextStep();
             }}
-            className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
+            className="buttonBasics md:px-4 p-2 md:py-3  hover:scale-105"
           >
             Pokračovat
           </button>

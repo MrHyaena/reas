@@ -3,9 +3,9 @@
 import { useState } from "react";
 import * as validator from "validator";
 import { PersonalInfoType } from "../../_types/FormularTypes";
-import { Heading } from "../FormBodyHeading";
+import { Heading } from "../Headings/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
-import { ErrorMessage } from "../ErrorMessage";
+import { ErrorMessage } from "../ErrorMessages/ErrorMessage";
 
 export function PersonalInfo({
   personalInfo,
@@ -55,6 +55,7 @@ export function PersonalInfo({
 
     if (errorArray.length > 0) {
       setError(errorArray[0]);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (errorArray.length == 0) {
       setFormBodyPart(formBodyPart + 1);
       SaveData();
@@ -63,16 +64,12 @@ export function PersonalInfo({
 
   return (
     <>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          NextStep();
-        }}
-        className="flex flex-col items-center gap-10 w-full"
-      >
+      <div className="flex flex-col items-center gap-10 w-full">
         <Heading text={headings[formBodyPart]} />
-        <div className="grid grid-cols-2 gap-5 w-[50%]">
-          <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+        {error != null && <ErrorMessage text={error} />}
+
+        <div className="grid md:grid-cols-2 md:gap-5 gap-2 md:w-[50%] w-full">
+          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center w-full">
             Křestní jméno:
             <input
               value={firstName}
@@ -82,7 +79,7 @@ export function PersonalInfo({
               }}
             ></input>
           </label>
-          <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
             Příjmení:
             <input
               value={secondName}
@@ -92,7 +89,7 @@ export function PersonalInfo({
               }}
             ></input>
           </label>
-          <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
             Email:
             <input
               type="email"
@@ -103,7 +100,7 @@ export function PersonalInfo({
               }}
             ></input>
           </label>
-          <label className="flex flex-col text-textLight font-oswald text-xl gap-1 text-center">
+          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
             Telefon:
             <input
               value={phone}
@@ -118,13 +115,14 @@ export function PersonalInfo({
           </label>
         </div>
         <button
-          type="submit"
-          className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
+          onClick={() => {
+            NextStep();
+          }}
+          className="buttonBasics md:px-4 p-2 md:py-3  hover:scale-105 md:w-auto w-full"
         >
           Pokračovat
         </button>
-        {error != null && <ErrorMessage text={error} />}
-      </form>
+      </div>
     </>
   );
 }

@@ -6,10 +6,10 @@ import { FaHouseChimney, FaShop, FaVectorSquare } from "react-icons/fa6";
 import { MdApartment } from "react-icons/md";
 import { PiHouseLineFill } from "react-icons/pi";
 import { BsQuestionSquareFill } from "react-icons/bs";
-import { Heading } from "../FormBodyHeading";
+import { Heading } from "../Headings/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
 import { realEstateData } from "@/app/_data/realEstate";
-import { ErrorMessage } from "../ErrorMessage";
+import { ErrorMessage } from "../ErrorMessages/ErrorMessage";
 
 export function RealEstateCategory({
   setRealEstateCategory,
@@ -31,6 +31,7 @@ export function RealEstateCategory({
 
   function NextStep() {
     if (type.name.length == 0) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       setError("Vyberte některý z typů nemovitosti");
     } else {
       setFormBodyPart(formBodyPart + 1);
@@ -72,7 +73,9 @@ export function RealEstateCategory({
     <>
       <div className="flex flex-col items-center gap-10 w-full">
         <Heading text={headings[formBodyPart]} />
-        <div className="grid grid-cols-3 gap-8 max-w-[700px] w-full">
+        {error != null && <ErrorMessage text={error} />}
+
+        <div className="grid md:grid-cols-3 md:gap-8 gap-3 max-w-[700px] w-full">
           {realEstateData.map((item) => {
             return (
               <RealEstateButton
@@ -83,13 +86,13 @@ export function RealEstateCategory({
             );
           })}
         </div>
-        <div className="flex gap-4">
+        <div className="grid grid-cols-2 gap-4 md:text-lg text-md font-semibold w-full md:w-auto">
           <button
             onClick={() => {
               setFormBodyPart(formBodyPart - 1);
               setRealEstateCategory(type);
             }}
-            className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
+            className="buttonBasics md:px-4 p-2 md:py-3   hover:scale-105"
           >
             Zpět
           </button>
@@ -97,12 +100,11 @@ export function RealEstateCategory({
             onClick={() => {
               NextStep();
             }}
-            className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
+            className="buttonBasics md:px-4 p-2 md:py-3  hover:scale-105"
           >
             Pokračovat
           </button>
         </div>
-        {error != null && <ErrorMessage text={error} />}
       </div>
     </>
   );

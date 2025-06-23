@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 
 import {
-  KrajTypes,
-  OkresTypes,
+  KrajType,
+  OkresType,
   PersonalInfoType,
   RealEstateCategoryType,
-} from "../_types/FormularTypes";
-import { PersonalInfo } from "./FormParts/PersonalInfo";
-import { RealEstateCategory } from "./FormParts/RealEstateCategory";
-import { RepublicMap } from "./FormParts/RepublicMap";
-import { Summary } from "./FormParts/Summary";
+} from "../../_types/FormularTypes";
+import { PersonalInfo } from "./PersonalInfo";
+import { RealEstateCategory } from "./RealEstateCategory";
+import { RepublicMap } from "./RepublicMap";
+import { Summary } from "./Summary";
 
 export function FormBody() {
   //Personal information
@@ -30,13 +30,13 @@ export function FormBody() {
     });
 
   //Okres State
-  const [okres, setOkres] = useState<OkresTypes>({
+  const [okres, setOkres] = useState<OkresType>({
     name: "",
     value: "",
   });
 
   //Kraj state
-  const [kraj, setKraj] = useState<KrajTypes>({
+  const [kraj, setKraj] = useState<KrajType>({
     name: "",
     value: "",
   });

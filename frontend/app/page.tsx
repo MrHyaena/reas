@@ -4,8 +4,8 @@ export default function page() {
       className="bg-cover bg-center"
       style={{ backgroundImage: `url(/hero.jpg)` }}
     >
-      <div className="bg-radial from-slate-900/60 to-slate-900 to-85% px-10 w-full min-h-screen flex items-center justify-center bg-cover">
-        <div className="w-wrapper gap-5 grid grid-cols-2">
+      <div className="pagePadding bg-radial from-slate-900/60 to-slate-900 to-85% w-full min-h-screen flex md:items-center justify-center bg-cover pt-headerPadding">
+        <div className="w-wrapper gap-5 md:grid grid-cols-2">
           <div className="flex flex-col items-start gap-8">
             <div className="flex flex-col items-start">
               <p className="text-primary font-bebas text-xl">
@@ -16,7 +16,7 @@ export default function page() {
                 <br /> bez realitky
               </h1>
             </div>
-            <p className="text-textLight font-oswald text-xl">
+            <p className="text-textLight font-oswald md:text-xl text-lg">
               S námi dostanete prostor pro správu vašeho prodeje, zdarma
               nemovitost oceníme a v případě zájmu domluvíme konzultaci s
               realitním specialistou.
@@ -24,7 +24,7 @@ export default function page() {
             <div className="flex items-center gap-5">
               <a
                 href="/chci-nabidku"
-                className="buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105"
+                className="buttonBasics md:px-4 md:py-3 p-2 md:text-lg font-semibold hover:scale-105"
               >
                 Pojďte to s námi zkusit
               </a>

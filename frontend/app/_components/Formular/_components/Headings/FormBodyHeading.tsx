@@ -3,7 +3,7 @@ import { IoIosExit } from "react-icons/io";
 export function Heading({ text }: { text: string }) {
   return (
     <>
-      <div className="grid grid-cols-[1fr_3fr_1fr] items-center gap-3">
+      <div className="md:grid grid-cols-[1fr_3fr_1fr] text-center flex flex-col items-center gap-3">
         {" "}
         <a href="/">
           {" "}

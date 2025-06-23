@@ -100,7 +100,7 @@ export default function Header({}: Props) {
   }
 
   return (
-    <div className="w-full bg-slate-900/90 flex items-center justify-center py-4 fixed top-0 px-10">
+    <div className="w-full bg-slate-900/90 flex items-center justify-center py-4 fixed top-0 headerPadding z-5">
       <DesktopHeader />
       <MobileHeader />
     </div>

@@ -20,6 +20,7 @@
   --color-borderGray: var(--color-slate-500);
 
   --spacing-wrapper: 1400px;
+  --spacing-headerPadding: 100px;
 
   --animate-fallFromLeft: fallFromLeft 300ms ease-in-out forwards;
 
@@ -65,11 +66,11 @@
 }
 
 h1 {
-  @apply text-7xl font-oswald uppercase;
+  @apply md:text-7xl text-4xl font-oswald uppercase;
 }
 
 h2 {
-  @apply text-6xl font-oswald uppercase;
+  @apply md:text-6xl text-3xl font-oswald uppercase;
 }
 
 h3 {
@@ -77,9 +78,17 @@ h3 {
 }
 
 h5 {
-  @apply text-xl font-oswald uppercase;
+  @apply text-lg font-oswald uppercase;
 }
 
 .buttonBasics {
   @apply bg-sky-500 rounded-sm  uppercase font-oswald hover:shadow-[5px_5px_0px_0px] shadow-white text-white  cursor-pointer ease-in-out transition-all;
+}
+
+.pagePadding {
+  @apply md:px-10 px-5 pb-5;
+}
+
+.headerPadding {
+  @apply md:px-10 px-5;
 }
