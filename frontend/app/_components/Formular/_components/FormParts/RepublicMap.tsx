@@ -1,36 +1,36 @@
 import { useState } from "react";
-import { KrajType, OkresType } from "../../_types/FormularTypes";
 import { mapData } from "@/app/_data/mapData";
 import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
 import { ErrorMessage } from "../../../ErrorMessages/_components/ErrorMessage";
+import { DistrictType, RegionType } from "../../_types/FormularTypes";
 
 export function RepublicMap({
-  setOkres,
-  setKraj,
-  okres,
-  kraj,
+  setDistrict,
+  setRegion,
+  district,
+  region,
   setFormBodyPart,
   formBodyPart,
 }: {
-  setOkres: React.Dispatch<React.SetStateAction<OkresType>>;
-  setKraj: React.Dispatch<React.SetStateAction<KrajType>>;
-  okres: OkresType;
-  kraj: KrajType;
+  setDistrict: React.Dispatch<React.SetStateAction<DistrictType>>;
+  setRegion: React.Dispatch<React.SetStateAction<RegionType>>;
+  district: DistrictType;
+  region: RegionType;
   setFormBodyPart: React.Dispatch<React.SetStateAction<number>>;
   formBodyPart: number;
 }) {
-  const [okresName, setOkresName] = useState<OkresType>(okres);
-  const [krajName, setKrajName] = useState<KrajType>(kraj);
+  const [districtData, setDistrictData] = useState<DistrictType>(district);
+  const [regionData, setRegionData] = useState<RegionType>(region);
 
   const [error, setError] = useState<string | null>(null);
 
   function SaveData() {
-    setOkres(okresName);
-    setKraj(krajName);
+    setDistrict(districtData);
+    setRegion(region);
   }
 
-  function GenerateKrajMapPart({
+  function GenerateOneRegion({
     value,
     d,
     name,
@@ -41,7 +41,7 @@ export function RepublicMap({
   }) {
     let bgcolor = "fill-slate-500";
     let stroke = "stroke-2";
-    if (krajName.value == value) {
+    if (regionData.value == value) {
       bgcolor = "fill-primary";
       stroke = "stroke-2";
     }
@@ -50,7 +50,7 @@ export function RepublicMap({
       <path
         className={`hover:fill-primary hover:stroke-2 ${bgcolor} cursor-pointer transition-all ease-in-out ${stroke}`}
         onClick={() => {
-          setKrajName({
+          setRegionData({
             name: name,
             value: value,
           });
@@ -80,13 +80,13 @@ export function RepublicMap({
             <metadata id="metadata96"></metadata>
             <defs id="defs94" />
             <>
-              {mapData.map((krajObject) => {
+              {mapData.map((regionObject) => {
                 return (
-                  <GenerateKrajMapPart
-                    key={krajObject.name}
-                    value={krajObject.value}
-                    d={krajObject.d}
-                    name={krajObject.name}
+                  <GenerateOneRegion
+                    key={regionObject.name}
+                    value={regionObject.value}
+                    d={regionObject.d}
+                    name={regionObject.name}
                   />
                 );
               })}
@@ -97,32 +97,32 @@ export function RepublicMap({
     );
   }
 
-  function GenerateKrajMobile() {
+  function GenerateRegionSelectMobile() {
     return (
       <>
         <select
-          defaultValue={krajName.value}
+          defaultValue={regionData.value}
           name="kraj"
           id="kraj"
           className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600 text-white w-full md:hidden"
           onChange={(e) => {
-            const krajData = mapData.find(
-              (krajItem) => krajItem.value == e.target.value
+            const newRegionItem = mapData.find(
+              (regionObject) => regionObject.value == e.target.value
             );
 
-            if (krajData) {
-              const krajValue: KrajType = {
-                name: krajData.name,
-                value: krajData.value,
+            if (newRegionItem) {
+              const regionValue: RegionType = {
+                name: newRegionItem.name,
+                value: newRegionItem.value,
               };
-              setKrajName(krajValue);
+              setRegionData(regionValue);
             }
           }}
         >
-          {mapData.map((krajItem) => {
+          {mapData.map((regionItem) => {
             return (
-              <option key={"select" + krajItem.name} value={krajItem.value}>
-                {krajItem.name}
+              <option key={"select" + regionItem.name} value={regionItem.value}>
+                {regionItem.name}
               </option>
             );
           })}
@@ -132,16 +132,15 @@ export function RepublicMap({
   }
 
   function GenerateOkresButtons() {
-    const krajObject = mapData.find((kraj) => {
-      return kraj.value == krajName.value;
+    const regionObject = mapData.find((regionitem) => {
+      return regionitem.value == regionData.value;
     });
-    console.log(krajObject);
-    const array = krajObject?.okresy.map((okres) => {
+    const array = regionObject?.districts.map((district) => {
       return (
-        <GenerateOneOkresButton
-          key={okres.name}
-          name={okres.name}
-          value={okres.value}
+        <GenerateOneDistrictButton
+          key={district.name}
+          name={district.name}
+          value={district.value}
         />
       );
     });
@@ -149,10 +148,10 @@ export function RepublicMap({
     return array;
   }
 
-  function GenerateOneOkresButton({ name, value }: OkresType) {
+  function GenerateOneDistrictButton({ name, value }: DistrictType) {
     let shadow: string | null = null;
     let color = "bg-slate-600";
-    if (value == okresName.value) {
+    if (value == districtData.value) {
       color = "bg-primary";
       shadow = "shadow-[5px_5px_0px_0px]";
     }
@@ -161,7 +160,7 @@ export function RepublicMap({
       <>
         <button
           onClick={() => {
-            setOkresName({
+            setDistrictData({
               name: name,
               value: value,
             });
@@ -175,12 +174,12 @@ export function RepublicMap({
   }
 
   function NextStep() {
-    if (okresName.name.length == 0 || krajName.name.length == 0) {
+    if (districtData.name.length == 0 || regionData.name.length == 0) {
       setError("Vyberte kraj a okres");
     } else {
       setFormBodyPart(formBodyPart + 1);
-      setOkres(okresName);
-      setKraj(krajName);
+      setDistrict(districtData);
+      setRegion(regionData);
     }
   }
 
@@ -191,7 +190,7 @@ export function RepublicMap({
         {error != null && <ErrorMessage text={error} />}
 
         <div className="md:grid flex flex-col grid-cols-2 gap-10 w-full items-start">
-          <GenerateKrajMobile />
+          <GenerateRegionSelectMobile />
           <GenerateMap />
           <div className="flex items-center">
             <div className="flex gap-5 flex-wrap">

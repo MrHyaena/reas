@@ -3,7 +3,7 @@ export const mapData = [
     name: "Středočeský kraj",
     value: "stredocesky",
     index: 0,
-    okresy: [
+    districts: [
       { name: "Benešov", value: "benesov" },
       { name: "Beroun", value: "beroun" },
       { name: "Kladno", value: "kladno" },
@@ -23,7 +23,7 @@ export const mapData = [
     name: "Hlavní město Praha",
     value: "praha",
     index: 1,
-    okresy: [{ name: "Hlavní město Praha", value: "praha" }],
+    districts: [{ name: "Hlavní město Praha", value: "praha" }],
     d: "m476.65 293.51c-2.3923.69001-5.9492-1.9654-7.4679.022-2.086 2.7275 1.7914 7.7158-.4382 10.33-1.882 2.2054-5.9492 1.326-8.6652.3293-1.9453-.71355-1.8177-5.3294-3.8447-4.9167-5.9107 1.2042-11.127 5.0649-15.789 8.9182-1.4432 1.193 4.0039-1.4821 5.5791-.47892 3.2906 2.0954 7.8686 4.9834 7.6461 8.8995-.19431 3.4258-6.9649 2.674-8.4861 5.748-.7615 1.5389 3.8087.15608 4.9175 1.4629 2.1979 2.5906 1.9758 6.7648 4.2323 9.3044 1.1408 1.2838 4.787-.59875 5.0172 1.1086.36026 2.6716-5.1405 4.6723-3.9144 7.0691 1.4759 2.8864 7.3613.46566 9.1502 3.1667 1.2606 1.905-3.2385 3.9332-2.9488 6.2073.16309 1.2794 3.8841-.72874 3.8018.55652-.12512 1.9447-5.583 2.8742-4.1076 4.1409 3.833 3.2894 9.5738 6.1818 14.383 4.6738 3.0068-.94274-1.6862-7.6869.9086-9.4746 3.5389-2.4376 8.9087 1.6424 12.864-.0204 3.055-1.2843 3.2984-6.0969 6.0519-7.9445 2.1508-1.4433 5.471.13052 7.6573-1.2543.87892-.557-1.9335-2.6539-.95144-2.9994 3.1587-1.1121 6.757.44019 10.042-.20759 1.0031-.19775 1.1866-2.515 2.1517-2.1946 4.3686 1.4531 7.5326 5.748 11.987 6.8944 1.2232.31409-1.002-2.9743-.0603-3.8214.89252-.80285 3.3752 1.8986 3.5277.70374.67443-5.298-3.4961-10.966-1.5766-15.943 1.4267-3.6987 7.5239-3.1721 10.108-6.1617 1.4042-1.6249 2.103-4.7386.77081-6.4178-2.2204-2.7967-7.1256-2.1274-9.5948-4.7038-1.193-1.2445 1.5659-4.2836.11002-5.2008-3.4786-2.1921-8.8922.23212-12.099-2.3501-1.9584-1.5772 1.8026-6.1067-.22979-7.5799-3.7323-2.704-9.4706-.36661-13.582-2.4366-1.5368-.77388.41963-5.3186-1.2724-5.034-9.0669 1.5233-17.042 7.0534-25.878 9.6047z",
   },
 
@@ -31,7 +31,7 @@ export const mapData = [
     name: "Jihočeský kraj",
     value: "jihocesky",
     index: 2,
-    okresy: [
+    districts: [
       { name: "České Budějovice", value: "ceske-budejovice" },
       { name: "Český Krumlov", value: "cesky-krumlov" },
       { name: "Jindřichův Hradec", value: "jindrichuv-hradec" },
@@ -46,7 +46,7 @@ export const mapData = [
     name: "Plzeňský kraj",
     value: "plzensky",
     index: 3,
-    okresy: [
+    districts: [
       { name: "Domažlice", value: "domazlice" },
       { name: "Klatovy", value: "klatovy" },
       { name: "Plzeň-město", value: "plzen-mesto" },
@@ -61,7 +61,7 @@ export const mapData = [
     name: "Karlovarský kraj",
     value: "karlovarsky",
     index: 4,
-    okresy: [
+    districts: [
       { name: "Cheb", value: "cheb" },
       { name: "Karlovy Vary", value: "karlovy-vary" },
       { name: "Sokolov", value: "sokolov" },
@@ -72,7 +72,7 @@ export const mapData = [
     name: "Ústecký kraj",
     value: "ustecky",
     index: 5,
-    okresy: [
+    districts: [
       { name: "Děčín", value: "decin" },
       { name: "Chomutov", value: "chomutov" },
       { name: "Litoměřice", value: "litomerice" },
@@ -87,7 +87,7 @@ export const mapData = [
     name: "Liberecký kraj",
     value: "liberecky",
     index: 6,
-    okresy: [
+    districts: [
       { name: "Česká Lípa", value: "ceska-lipa" },
       { name: "Jablonec nad Nisou", value: "jablonec-nad-nisou" },
       { name: "Liberec", value: "liberec" },
@@ -99,7 +99,7 @@ export const mapData = [
     name: "Královéhradecký kraj",
     value: "kralovehradecky",
     index: 7,
-    okresy: [
+    districts: [
       { name: "Hradec Králové", value: "hradec-kralove" },
       { name: "Jičín", value: "jicin" },
       { name: "Náchod", value: "nachod" },
@@ -112,7 +112,7 @@ export const mapData = [
     name: "Pardubický kraj",
     value: "pardubicky",
     index: 8,
-    okresy: [
+    districts: [
       { name: "Chrudim", value: "chrudim" },
       { name: "Pardubice", value: "pardubice" },
       { name: "Svitavy", value: "svitavy" },
@@ -124,7 +124,7 @@ export const mapData = [
     name: "Kraj Vysočina",
     value: "vysocina",
     index: 9,
-    okresy: [
+    districts: [
       { name: "Havlíčkův Brod", value: "havlickuv-brod" },
       { name: "Jihlava", value: "jihlava" },
       { name: "Pelhřimov", value: "pelhrimov" },
@@ -137,7 +137,7 @@ export const mapData = [
     name: "Jihomoravský kraj",
     value: "jihomoravsky",
     index: 10,
-    okresy: [
+    districts: [
       { name: "Blansko", value: "blansko" },
       { name: "Brno-město", value: "brno-mesto" },
       { name: "Brno-venkov", value: "brno-venkov" },
@@ -152,7 +152,7 @@ export const mapData = [
     name: "Olomoucký kraj",
     value: "olomoucky",
     index: 11,
-    okresy: [
+    districts: [
       { name: "Jeseník", value: "jesenik" },
       { name: "Olomouc", value: "olomouc" },
       { name: "Prostějov", value: "prostejov" },
@@ -165,7 +165,7 @@ export const mapData = [
     name: "Moravskoslezský kraj",
     value: "moravskoslezsky",
     index: 12,
-    okresy: [
+    districts: [
       { name: "Bruntál", value: "bruntal" },
       { name: "Frýdek-Místek", value: "frydek-mistek" },
       { name: "Karviná", value: "karvina" },
@@ -180,7 +180,7 @@ export const mapData = [
     name: "Zlínský kraj",
     value: "zlinsky",
     index: 13,
-    okresy: [
+    districts: [
       { name: "Kroměříž", value: "kromeriz" },
       { name: "Uherské Hradiště", value: "uherske-hradiste" },
       { name: "Vsetín", value: "vsetin" },

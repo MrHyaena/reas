@@ -3,24 +3,24 @@ import { Heading } from "../../../Headings/_components/FormBodyHeading";
 import { FaHouseChimney } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import {
-  KrajType,
-  OkresType,
+  DistrictType,
   PersonalInfoType,
   RealEstateCategoryType,
+  RegionType,
 } from "../../_types/FormularTypes";
 
 export function Summary({
   formBodyPart,
   realEstateCategory,
-  kraj,
-  okres,
+  region,
+  district,
   personalInfo,
   setFormBodyPart,
 }: {
   formBodyPart: number;
   realEstateCategory: RealEstateCategoryType;
-  kraj: KrajType;
-  okres: OkresType;
+  region: RegionType;
+  district: DistrictType;
   personalInfo: PersonalInfoType;
   setFormBodyPart: React.Dispatch<React.SetStateAction<number>>;
 }) {
@@ -50,11 +50,11 @@ export function Summary({
               </div>
               <div className="grid grid-cols-2 not-last:border-b pb-1 border-slate-700">
                 <p>Kraj:</p>
-                <p>{kraj.name}</p>
+                <p>{region.name}</p>
               </div>
               <div className="grid grid-cols-2 not-last:border-b pb-1 border-slate-700">
                 <p>Okres:</p>
-                <p>{okres.name}</p>
+                <p>{district.name}</p>
               </div>
             </div>
           </div>

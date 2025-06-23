@@ -10,12 +10,12 @@ export type RealEstateCategoryType = {
   value: string;
 };
 
-export type OkresType = {
+export type DistrictType = {
   name: string;
   value: string;
 };
 
-export type KrajType = {
+export type RegionType = {
   name: string;
   value: string;
 };
@@ -23,6 +23,6 @@ export type KrajType = {
 export type DataForSubmitType = {
   personalInfo: PersonalInfoType;
   realEstateCategory: RealEstateCategoryType;
-  kraj: KrajType;
-  okres: OkresType;
+  region: RegionType;
+  district: DistrictType;
 };
