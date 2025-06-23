@@ -20,6 +20,48 @@
   --color-borderGray: var(--color-slate-500);
 
   --spacing-wrapper: 1400px;
+
+  --animate-fallFromLeft: fallFromLeft 300ms ease-in-out forwards;
+
+  @keyframes fallFromLeft {
+    0% {
+      transform: translate(-200px, 0px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+  }
+
+  --animate-fallFromRight: fallFromRight 300ms ease-in-out forwards;
+
+  @keyframes fallFromRight {
+    0% {
+      transform: translate(200px, 0px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+  }
+
+  --animate-scaleUp: scaleUp 500ms ease-in-out forwards;
+
+  @keyframes scaleUp {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
 }
 
 h1 {
