@@ -35,7 +35,7 @@ const leadSchema = new Schema(
       required: true,
     },
   },
-  { strict: "throw" }
+  { strict: "throw", timestamps: true }
 );
 
 export const Lead = mongoose.model("Lead", leadSchema);

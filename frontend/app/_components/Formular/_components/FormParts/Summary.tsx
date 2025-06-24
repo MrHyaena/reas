@@ -12,6 +12,7 @@ import {
   RegionType,
 } from "../../_types/FormularTypes";
 import { useState } from "react";
+import { ErrorMessage } from "@/app/_components/ErrorMessages/_components/ErrorMessage";
 
 export function Summary({
   formBodyPart,
@@ -72,6 +73,8 @@ export function Summary({
       ) : (
         <div className="flex flex-col items-center gap-10 w-full overflow-hidden">
           <Heading text={headings[formBodyPart]} />
+          {error != null && <ErrorMessage text={error} />}
+
           <div className="flex flex-col gap-5 w-full md:min-w-[50%] md:w-auto">
             <div className="animate-fallFromLeft bg-slate-800/80 text-textLight font-oswald text-xl border rounded-md border-slate-600 md:p-5 p-3">
               <div className="flex items-center pb-2 mb-3 border-b border-slate-600 gap-2">
