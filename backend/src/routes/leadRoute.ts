@@ -1,6 +1,8 @@
 import Router from "koa-router";
 import { leadReceive } from "../controllers/leadController.js";
 
-export const leadRouter = new Router({ prefix: "/lead" });
+//Initializing route
+export const leadRouter = new Router();
 
+//Route for receiving lead
 leadRouter.post("/", leadReceive);

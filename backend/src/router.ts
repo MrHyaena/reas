@@ -4,5 +4,8 @@ import { rootRouter } from "./routes/rootRoute.js";
 
 export const allRouter = new Router();
 
-allRouter.use(leadRouter.routes()).use(leadRouter.allowedMethods());
-allRouter.use(rootRouter.routes()).use(rootRouter.allowedMethods());
+//Router for working with leads
+allRouter.use("/lead", leadRouter.routes()).use(leadRouter.allowedMethods());
+
+//Route for server root
+allRouter.use("/", rootRouter.routes()).use(rootRouter.allowedMethods());

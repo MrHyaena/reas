@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
+//Creating MongoDB schema for Lead.
+//When server tries to create new record in database for Leads group, it check if data structure matches Schema.
 const leadSchema = new Schema(
   {
     personalInfo: {

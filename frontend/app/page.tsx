@@ -1,10 +1,10 @@
-export default function page() {
+export default function Page() {
   return (
     <div
       className="bg-cover bg-center"
       style={{ backgroundImage: `url(/hero.jpg)` }}
     >
-      <div className="pagePadding bg-radial from-slate-900/60 to-slate-900 to-85% w-full min-h-screen flex md:items-center justify-center bg-cover pt-headerPadding">
+      <div className="pagePadding bg-radial from-slate-900/60 to-slate-900 to-85% w-full min-h-screen flex md:items-center justify-center pt-headerPadding">
         <div className="w-wrapper gap-5 md:grid grid-cols-2">
           <div className="flex flex-col items-start gap-8">
             <div className="flex flex-col items-start">

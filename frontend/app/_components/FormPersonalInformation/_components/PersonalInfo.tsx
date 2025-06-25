@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import * as validator from "validator";
-import { PersonalInfoType } from "../../_types/FormularTypes";
-import { Heading } from "../../../Headings/_components/FormBodyHeading";
+import { PersonalInfoType } from "../../../_types/FormularTypes";
 import { headings } from "@/app/_data/formBodyHeadings";
-import { ErrorMessage } from "../../../ErrorMessages/_components/ErrorMessage";
+import { Heading } from "../../Headings/_components/FormBodyHeading";
+import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
+import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
 export function PersonalInfo({
   personalInfo,
@@ -29,15 +30,6 @@ export function PersonalInfo({
   const [phone, setPhone] = useState<string>(personalInfo.phone);
   const [error, setError] = useState<string | null>(null);
 
-  function SaveData() {
-    setPersonalInfo({
-      firstName: firstName,
-      secondName: secondName,
-      email: email,
-      phone: phone,
-    });
-  }
-
   function NextStep() {
     const errorArray: string[] = [];
 
@@ -58,13 +50,18 @@ export function PersonalInfo({
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (errorArray.length == 0) {
       setFormBodyPart(formBodyPart + 1);
-      SaveData();
+      setPersonalInfo({
+        firstName: firstName,
+        secondName: secondName,
+        email: email,
+        phone: phone,
+      });
     }
   }
 
   return (
     <>
-      <div className="flex flex-col items-center gap-10 w-full">
+      <form className="flex flex-col items-center gap-10 w-full">
         <Heading text={headings[formBodyPart]} />
         {error != null && <ErrorMessage text={error} />}
 
@@ -113,15 +110,13 @@ export function PersonalInfo({
             ></input>
           </label>
         </div>
-        <button
+        <NavigationButton
+          text="Pokračovat"
           onClick={() => {
             NextStep();
           }}
-          className="buttonBasics md:px-4 p-2 md:py-3  hover:scale-105 md:w-auto w-full"
-        >
-          Pokračovat
-        </button>
-      </div>
+        />
+      </form>
     </>
   );
 }

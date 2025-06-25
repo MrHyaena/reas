@@ -2,24 +2,24 @@
 
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { FormPart } from "./FormCarousel";
 import { formIntroductionTexts } from "@/app/_data/formIntroductionsTexts";
+import { FormPart } from "./FormCarousel";
 
 type FormIntroduction = {
   setformPart: React.Dispatch<React.SetStateAction<FormPart>>;
 };
 
 export function FormIntroduction({ setformPart }: FormIntroduction) {
-  const [text, setText] = useState<number>(0);
+  const [currentStep, setCurrentStep] = useState<number>(0);
 
   return (
     <>
       <div className="grid md:grid-cols-[1fr_4fr_1fr] grid-cols-2 items-center justify-items-center md:max-w-[80%] md:gap-0 gap-y-5">
-        {text != 0 && (
+        {currentStep != 0 && (
           <>
             <div
               onClick={() => {
-                setText(text - 1);
+                setCurrentStep(currentStep - 1);
               }}
               className="p-2 md:block hidden row-start-1 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out hover:shadow-[4px_4px_0px_0px] shadow-white "
             >
@@ -29,10 +29,10 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
         )}
         <div className="md:row-start-1 row-start-2 md:col-start-2 col-span-2 md:col-span-1 flex flex-col items-center gap-5">
           <h2 className="text-textLight  text-center md:leading-[80px]">
-            {formIntroductionTexts[text]}
+            {formIntroductionTexts[currentStep]}
           </h2>
           <div className="">
-            {text == formIntroductionTexts.length - 1 ? (
+            {currentStep == formIntroductionTexts.length - 1 ? (
               <>
                 {" "}
                 <button
@@ -56,7 +56,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
                 </button>
                 <button
                   onClick={() => {
-                    setText(text + 1);
+                    setCurrentStep(currentStep + 1);
                   }}
                   className="md:hidden buttonBasics px-4 py-3 text-lg font-semibold hover:scale-105 md:mt-10"
                 >
@@ -66,12 +66,12 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
             )}
           </div>
         </div>
-        {text < formIntroductionTexts.length - 1 && (
+        {currentStep < formIntroductionTexts.length - 1 && (
           <>
             <div
               onClick={() => {
-                if (text < formIntroductionTexts.length - 1) {
-                  setText(text + 1);
+                if (currentStep < formIntroductionTexts.length - 1) {
+                  setCurrentStep(currentStep + 1);
                 }
               }}
               className="p-2 md:block hidden col-start-2 row-start-1 mt-10 bg-primary rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out md:col-start-3 hover:shadow-[4px_4px_0px_0px] shadow-white"

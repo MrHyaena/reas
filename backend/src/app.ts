@@ -8,10 +8,14 @@ const app = new Koa();
 
 //Json prettier Middleware
 app.use(json());
+
+//Body parser for better readability on client
 app.use(bodyParser());
+
+//Cors rules
 app.use(cors());
 
-//Router Middleware
+//AllRouter that unites all routers into this one
 app.use(allRouter.routes()).use(allRouter.allowedMethods());
 
 export default app;

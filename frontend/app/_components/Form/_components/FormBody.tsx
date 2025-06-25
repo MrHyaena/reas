@@ -7,11 +7,11 @@ import {
   PersonalInfoType,
   RealEstateCategoryType,
   RegionType,
-} from "../../_types/FormularTypes";
-import { PersonalInfo } from "./PersonalInfo";
-import { RealEstateCategory } from "./RealEstateCategory";
-import { RepublicMap } from "./RepublicMap";
-import { Summary } from "./Summary";
+} from "../../../_types/FormularTypes";
+import { PersonalInfo } from "../../FormPersonalInformation/_components/PersonalInfo";
+import { RealEstateCategory } from "../../FormRealEstateCategory/_components/RealEstateCategory";
+import { Summary } from "../../FormSummary/_components/Summary";
+import { RepublicMap } from "../../FormMap/_components/RepublicMap";
 
 export function FormBody() {
   //Personal information

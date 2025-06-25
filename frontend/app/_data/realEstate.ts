@@ -1,8 +1,10 @@
-export const realEstateData = [
-  { text: "Byt", value: "flat" },
-  { text: "Dům", value: "house" },
-  { text: "Pozemek", value: "parcel" },
-  { text: "Komerční", value: "commerce" },
-  { text: "Chata", value: "cabin" },
-  { text: "Ostatní", value: "other" },
+import { RealEstateCategoryType } from "../_types/FormularTypes";
+
+export const realEstateData: RealEstateCategoryType[] = [
+  { name: "Byt", value: "flat" },
+  { name: "Dům", value: "house" },
+  { name: "Pozemek", value: "parcel" },
+  { name: "Komerční", value: "commerce" },
+  { name: "Chata", value: "cabin" },
+  { name: "Ostatní", value: "other" },
 ];
