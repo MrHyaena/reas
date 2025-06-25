@@ -24,6 +24,7 @@ export function DistrictButtons({
 
     return (
       <button
+        data-testid="district"
         key={district.name}
         onClick={() => {
           onClick({ name: district.name, value: district.value });

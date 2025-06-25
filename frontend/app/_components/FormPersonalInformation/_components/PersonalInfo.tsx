@@ -4,7 +4,7 @@ import { useState } from "react";
 import * as validator from "validator";
 import { PersonalInfoType } from "../../../_types/FormularTypes";
 import { headings } from "@/app/_data/formBodyHeadings";
-import { Heading } from "../../Headings/_components/FormBodyHeading";
+import { FormBodyHeading } from "../../Headings/_components/FormBodyHeading";
 import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
@@ -64,13 +64,14 @@ export function PersonalInfo({
   return (
     <>
       <form className="flex flex-col items-center gap-10 w-full">
-        <Heading text={headings[formBodyPart]} />
+        <FormBodyHeading text={headings[formBodyPart]} />
         {error != null && <ErrorMessage text={error} />}
 
         <div className="grid md:grid-cols-2 md:gap-5 gap-2 md:w-[50%] w-full">
           <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center w-full">
             Křestní jméno:
             <input
+              data-testid="firstName"
               value={firstName}
               className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
               onChange={(e) => {
@@ -81,6 +82,7 @@ export function PersonalInfo({
           <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
             Příjmení:
             <input
+              data-testid="secondName"
               value={secondName}
               className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
               onChange={(e) => {
@@ -91,6 +93,7 @@ export function PersonalInfo({
           <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
             Email:
             <input
+              data-testid="email"
               type="email"
               value={email}
               className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
@@ -102,6 +105,7 @@ export function PersonalInfo({
           <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
             Telefon:
             <input
+              data-testid="phone"
               value={phone}
               className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
               onChange={(e) => {

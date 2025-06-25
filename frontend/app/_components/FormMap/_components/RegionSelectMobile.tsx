@@ -14,6 +14,7 @@ export function RegionSelectMobile({
 }) {
   return (
     <select
+      data-testid="selectRegion"
       value={regionData.value}
       name="kraj"
       id="kraj"

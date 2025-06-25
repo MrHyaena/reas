@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import { ErrorMessage } from "@/app/_components/ErrorMessages/_components/ErrorMessage";
 import { AiOutlineLoading } from "react-icons/ai";
-import { Heading } from "../../Headings/_components/FormBodyHeading";
+import { FormBodyHeading } from "../../Headings/_components/FormBodyHeading";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
 //Component for summarizing whole form and allowes user to send data
@@ -96,8 +96,11 @@ export function Summary({
           </div>
         </>
       ) : (
-        <div className="flex flex-col items-center gap-10 w-full overflow-hidden">
-          <Heading text={headings[formBodyPart]} />
+        <div
+          data-testid="summaryBlock"
+          className="flex flex-col items-center gap-10 w-full overflow-hidden"
+        >
+          <FormBodyHeading text={headings[formBodyPart]} />
           {error && <ErrorMessage text={error} />}
 
           <div className="flex flex-col gap-5 w-full md:min-w-[50%] md:w-auto">
@@ -109,7 +112,7 @@ export function Summary({
               <div className="md:text-base text-sm">
                 <div className="grid grid-cols-2 not-last:border-b pb-1 border-slate-700">
                   <p>Typ nemovitosti:</p>
-                  <p>{realEstateCategory.name}</p>
+                  <p data-testid="category">{realEstateCategory.name}</p>
                 </div>
                 <div className="grid grid-cols-2 not-last:border-b pb-1 border-slate-700">
                   <p>Kraj:</p>

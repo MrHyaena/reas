@@ -20,6 +20,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
         {currentStep != 0 && (
           <>
             <div
+              data-testid="back"
               onClick={() => {
                 setCurrentStep(currentStep - 1);
               }}
@@ -38,6 +39,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
               <>
                 {" "}
                 <button
+                  data-testid="form"
                   onClick={() => {
                     setformPart(2);
                   }}
@@ -49,6 +51,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
             ) : (
               <>
                 <button
+                  data-testid="form"
                   onClick={() => {
                     setformPart(2);
                   }}
@@ -57,6 +60,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
                   Přejít na formulář
                 </button>
                 <button
+                  data-testid="continue"
                   onClick={() => {
                     setCurrentStep(currentStep + 1);
                   }}
@@ -71,6 +75,7 @@ export function FormIntroduction({ setformPart }: FormIntroduction) {
         {currentStep < formIntroductionTexts.length - 1 && (
           <>
             <div
+              data-testid="continue"
               onClick={() => {
                 if (currentStep < formIntroductionTexts.length - 1) {
                   setCurrentStep(currentStep + 1);

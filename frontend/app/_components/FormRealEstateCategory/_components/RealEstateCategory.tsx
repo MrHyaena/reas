@@ -5,9 +5,9 @@ import { RealEstateCategoryType } from "../../../_types/FormularTypes";
 
 import { headings } from "@/app/_data/formBodyHeadings";
 import { realEstateData } from "@/app/_data/realEstate";
-import { Heading } from "../../Headings/_components/FormBodyHeading";
+import { FormBodyHeading } from "../../Headings/_components/FormBodyHeading";
 import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
-import { RealEstateButton } from "./RealEstateCategoryButton";
+import { RealEstateCategoryButton } from "./RealEstateCategoryButton";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
 //Component for Form. Allowes user to pick realEstate category
@@ -42,13 +42,13 @@ export function RealEstateCategory({
   return (
     <>
       <div className="flex flex-col items-center gap-10 w-full">
-        <Heading text={headings[formBodyPart]} />
+        <FormBodyHeading text={headings[formBodyPart]} />
         {error != null && <ErrorMessage text={error} />}
 
         <div className="grid md:grid-cols-3 md:gap-8 gap-3 max-w-[700px] w-full">
           {realEstateData.map((item) => {
             return (
-              <RealEstateButton
+              <RealEstateCategoryButton
                 key={item.name}
                 name={item.name}
                 value={item.value}

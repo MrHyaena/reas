@@ -6,7 +6,7 @@ import { RealEstateButtonType } from "@/app/_types/FormularTypes";
 
 //One button for realEstate category
 
-export function RealEstateButton({
+export function RealEstateCategoryButton({
   name,
   value,
   selected,

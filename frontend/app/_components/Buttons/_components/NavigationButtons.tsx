@@ -9,6 +9,7 @@ export function NavigationButton({
 }) {
   return (
     <button
+      data-testid="navigationButton"
       onClick={onClick}
       className="buttonBasics md:px-4 p-2 md:py-3   hover:scale-105"
     >

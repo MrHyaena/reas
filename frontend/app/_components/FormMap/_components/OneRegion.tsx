@@ -22,6 +22,7 @@ export function OneRegion({
 
   return (
     <path
+      data-testid={"region"}
       className={`hover:fill-primary hover:stroke-2 ${fillClass} cursor-pointer transition-all ease-in-out stroke-2`}
       onClick={() => {
         setDistrictData({ name: "", value: "" });

@@ -41,6 +41,7 @@ export function MobileHeader() {
             <p className="text-3xl lowercase mt-[-5px] text-textLight">Reas</p>
           </Link>
           <button
+            data-testid="mobileHeaderToggleButton"
             onClick={() => {
               setMenuToggle(!menuToggle);
             }}
@@ -50,10 +51,12 @@ export function MobileHeader() {
         </div>
         {menuToggle && (
           <ul className=" flex flex-col gap-10 items-center *:not-last:hover:text-primary *:not-last:transition-all *:not-last:ease-in-out font-oswald text-textLight">
-            {links.map((link) => {
+            {links.map((link, index) => {
               return (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <a data-testid={"link" + index} href={link.href}>
+                    {link.label}
+                  </a>
                 </li>
               );
             })}

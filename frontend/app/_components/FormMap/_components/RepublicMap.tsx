@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heading } from "../../Headings/_components/FormBodyHeading";
+import { FormBodyHeading } from "../../Headings/_components/FormBodyHeading";
 import { headings } from "@/app/_data/formBodyHeadings";
 import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
 import { DistrictType, RegionType } from "../../../_types/FormularTypes";
@@ -36,8 +36,8 @@ export function RepublicMap({
   }
 
   function NextStep() {
-    if (districtData.name.length == 0 || regionData.name.length == 0) {
-      setError("Vyberte kraj a okres");
+    if (!districtData.name || !regionData.name) {
+      setError("Chybí vybrat kraj a okres");
     } else {
       setError(null);
       setFormBodyPart(formBodyPart + 1);
@@ -48,7 +48,7 @@ export function RepublicMap({
   return (
     <>
       <div className="flex flex-col items-center gap-10 w-full">
-        <Heading text={headings[formBodyPart]} />
+        <FormBodyHeading text={headings[formBodyPart]} />
         {error != null && <ErrorMessage text={error} />}
 
         <div className="md:grid flex flex-col grid-cols-2 gap-10 w-full items-start">
