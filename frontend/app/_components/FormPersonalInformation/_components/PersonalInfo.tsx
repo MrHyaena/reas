@@ -7,6 +7,7 @@ import { headings } from "@/app/_data/formBodyHeadings";
 import { FormBodyHeading } from "../../Headings/_components/FormBodyHeading";
 import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
+import { PersonalInfoInput } from "./PersonalInfoInput";
 
 //Part of formular where user inputs personal info
 
@@ -74,53 +75,34 @@ export function PersonalInfo({
           }}
           className="grid md:grid-cols-2 md:gap-5 gap-2 md:w-[50%] w-full"
         >
-          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center w-full">
-            Křestní jméno:
-            <input
-              data-testid="firstName"
-              value={firstName}
-              className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
-              onChange={(e) => {
-                setFirstName(e.target.value);
-              }}
-            ></input>
-          </label>
-          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
-            Příjmení:
-            <input
-              data-testid="secondName"
-              value={secondName}
-              className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
-              onChange={(e) => {
-                setSecondName(e.target.value);
-              }}
-            ></input>
-          </label>
-          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
-            Email:
-            <input
-              data-testid="email"
-              type="email"
-              value={email}
-              className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            ></input>
-          </label>
-          <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center">
-            Telefon:
-            <input
-              data-testid="phone"
-              value={phone}
-              className="bg-slate-700/90 p-2  rounded-sm border-2 border-slate-600"
-              onChange={(e) => {
-                if (/^[0-9]{0,9}$/.test(e.target.value)) {
-                  setPhone(e.target.value);
-                }
-              }}
-            ></input>
-          </label>
+          <PersonalInfoInput
+            text="Křestní jméno:"
+            testId="firstName"
+            type="text"
+            value={firstName}
+            setter={setFirstName}
+          />
+          <PersonalInfoInput
+            text="Příjmení:"
+            testId="secondName"
+            type="text"
+            value={secondName}
+            setter={setSecondName}
+          />
+          <PersonalInfoInput
+            text="Email:"
+            testId="email"
+            type="email"
+            value={email}
+            setter={setEmail}
+          />
+          <PersonalInfoInput
+            text="Telefon:"
+            testId="phone"
+            type="text"
+            value={phone}
+            setter={setPhone}
+          />
         </form>
         <NavigationButton
           text="Pokračovat"
