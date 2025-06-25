@@ -13,11 +13,13 @@ Because of Docker usage, it is quite easy to start. Atleast if you have evertyhi
 - Connection to GitHub
 
 ### Steps
-1. Clone this repository into your local environment
-2. Go into root directory in terminal
-3. Write the code ```docker compose up ```
-4. Open the browser and search for ```http://localhost:3000```
-5. Now play!
+1. Open up terminal and go into directory where you want your files placed
+2. Clone this repository into your local environment with command ```git clone git@github.com:MrHyaena/reas.git```
+3. Go into root directory
+4. Write the command ```docker compose up ```
+5. If you get error, it is probably because of permissions. Solve this so you can use docker. You are most likely not in the docker group. If there is no error, continue.
+6. Open the browser and search for ```http://localhost:3000```
+7. Now play!
 
 ## Technology
 This is the technology used
