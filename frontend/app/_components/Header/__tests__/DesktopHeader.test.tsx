@@ -1,9 +1,8 @@
 import React from "react";
-import { beforeEach, describe, expect, it, test } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { DesktopHeader } from "../_components/DesktopHeader";
 
 describe("DesktopHeader links rendering", () => {

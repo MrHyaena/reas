@@ -48,6 +48,7 @@ export function PersonalInfo({
     }
 
     if (errorArray.length > 0) {
+      console.log(errorArray[0]);
       setError(errorArray[0]);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (errorArray.length == 0) {
@@ -63,11 +64,16 @@ export function PersonalInfo({
 
   return (
     <>
-      <form className="flex flex-col items-center gap-10 w-full">
+      <div className="flex flex-col items-center gap-10 w-full">
         <FormBodyHeading text={headings[formBodyPart]} />
         {error != null && <ErrorMessage text={error} />}
 
-        <div className="grid md:grid-cols-2 md:gap-5 gap-2 md:w-[50%] w-full">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+          className="grid md:grid-cols-2 md:gap-5 gap-2 md:w-[50%] w-full"
+        >
           <label className="flex flex-col text-textLight font-oswald md:text-xl gap-1 text-center w-full">
             Křestní jméno:
             <input
@@ -115,14 +121,14 @@ export function PersonalInfo({
               }}
             ></input>
           </label>
-        </div>
+        </form>
         <NavigationButton
           text="Pokračovat"
           onClick={() => {
             NextStep();
           }}
         />
-      </form>
+      </div>
     </>
   );
 }

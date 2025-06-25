@@ -1,8 +1,7 @@
 import React from "react";
-import { beforeEach, describe, expect, it, test } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { realEstateData } from "@/app/_data/realEstate";
 import { RealEstateCategory } from "../../_components/RealEstateCategory";
 
 describe("Summary integration test", () => {
