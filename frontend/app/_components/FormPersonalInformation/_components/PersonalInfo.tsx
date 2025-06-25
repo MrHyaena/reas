@@ -8,6 +8,8 @@ import { Heading } from "../../Headings/_components/FormBodyHeading";
 import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
+//Part of formular where user inputs personal info
+
 export function PersonalInfo({
   personalInfo,
   setPersonalInfo,

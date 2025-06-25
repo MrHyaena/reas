@@ -10,6 +10,8 @@ import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
 import { RealEstateButton } from "./RealEstateCategoryButton";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
+//Component for Form. Allowes user to pick realEstate category
+
 export function RealEstateCategory({
   setRealEstateCategory,
   realEstateCategory,

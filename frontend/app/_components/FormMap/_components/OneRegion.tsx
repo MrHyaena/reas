@@ -1,5 +1,7 @@
 import { DistrictType, RegionType } from "@/app/_types/FormularTypes";
 
+//Component for generating one region/part of map as svg
+
 export function OneRegion({
   value,
   d,

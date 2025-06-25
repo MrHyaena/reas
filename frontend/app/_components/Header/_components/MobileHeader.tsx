@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { TiThMenu } from "react-icons/ti";
 
+//Header component used for desktop user, shows when screen under 768px horizontally
 export function MobileHeader() {
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
 

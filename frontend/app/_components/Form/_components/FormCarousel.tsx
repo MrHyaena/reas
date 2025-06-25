@@ -6,6 +6,8 @@ import { FormBody } from "./FormBody";
 
 export type FormPart = number;
 
+//Component splits formPage to two parts. First for introduction, second for Form inputs
+
 export default function FormCarousel() {
   const [formPart, setformPart] = useState<FormPart>(1);
 

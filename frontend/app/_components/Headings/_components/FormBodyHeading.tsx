@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IoIosExit } from "react-icons/io";
 
+//Heading component used in form
 export function Heading({ text }: { text: string }) {
   return (
     <>

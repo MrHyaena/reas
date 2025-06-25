@@ -2,6 +2,8 @@ import { mapData } from "@/app/_data/mapData";
 import { DistrictType, RegionType } from "@/app/_types/FormularTypes";
 import { OneRegion } from "./OneRegion";
 
+//Component for generating whole SVG map from small parts
+
 export function Map({
   regionData,
   setRegionData,

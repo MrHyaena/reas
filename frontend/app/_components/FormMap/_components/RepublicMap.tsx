@@ -8,6 +8,8 @@ import { RegionSelectMobile } from "./RegionSelectMobile";
 import { Map } from "./Map";
 import { DistrictButtons } from "./DistrictButtons";
 
+//Part of form where user picks reagion and district
+
 export function RepublicMap({
   setDistrict,
   setRegion,

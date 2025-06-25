@@ -1,3 +1,5 @@
+//Texts used in form introduction
+
 export const formIntroductionTexts: string[] = [
   "Jak to bude probíhat",
   "Formulář má dvě části",

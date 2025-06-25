@@ -26,3 +26,10 @@ export type DataForSubmitType = {
   region: string;
   district: string;
 };
+
+export type RealEstateButtonType = {
+  name: string;
+  value: string;
+  selected: boolean;
+  onClick: () => void;
+};

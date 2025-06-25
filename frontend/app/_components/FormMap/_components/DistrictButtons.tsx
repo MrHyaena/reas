@@ -1,6 +1,8 @@
 import { mapData } from "@/app/_data/mapData";
 import { DistrictType, RegionType } from "@/app/_types/FormularTypes";
 
+//District button components used for picking district
+
 export function DistrictButtons({
   regionData,
   districtData,

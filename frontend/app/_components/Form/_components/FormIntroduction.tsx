@@ -9,6 +9,8 @@ type FormIntroduction = {
   setformPart: React.Dispatch<React.SetStateAction<FormPart>>;
 };
 
+//Introduction to Form
+
 export function FormIntroduction({ setformPart }: FormIntroduction) {
   const [currentStep, setCurrentStep] = useState<number>(0);
 

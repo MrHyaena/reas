@@ -13,6 +13,8 @@ import { RealEstateCategory } from "../../FormRealEstateCategory/_components/Rea
 import { Summary } from "../../FormSummary/_components/Summary";
 import { RepublicMap } from "../../FormMap/_components/RepublicMap";
 
+//Real formular for user inputs
+
 export function FormBody() {
   //Personal information
   const [personalInfo, setPersonalInfo] = useState<PersonalInfoType>({

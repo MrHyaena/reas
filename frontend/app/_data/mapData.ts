@@ -1,3 +1,5 @@
+//Data for generating map of Czech republic and its districts and regions
+
 export const mapData = [
   {
     name: "Středočeský kraj",

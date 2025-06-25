@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+//Header component used for desktop user, shows when screen over 768px horizontally
 export function DesktopHeader() {
   const links = [
     {

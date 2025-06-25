@@ -2,20 +2,16 @@ import { FaHouseChimney, FaShop, FaVectorSquare } from "react-icons/fa6";
 import { MdApartment } from "react-icons/md";
 import { PiHouseLineFill } from "react-icons/pi";
 import { BsQuestionSquareFill } from "react-icons/bs";
+import { RealEstateButtonType } from "@/app/_types/FormularTypes";
 
-type RealEstateButton = {
-  name: string;
-  value: string;
-  selected: boolean;
-  onClick: () => void;
-};
+//One button for realEstate category
 
 export function RealEstateButton({
   name,
   value,
   selected,
   onClick,
-}: RealEstateButton) {
+}: RealEstateButtonType) {
   const shadow: string | null = selected ? "shadow-[5px_5px_0px_0px]" : null;
   const color = selected ? "bg-primary" : "bg-slate-700";
 

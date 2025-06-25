@@ -16,6 +16,8 @@ import { AiOutlineLoading } from "react-icons/ai";
 import { Heading } from "../../Headings/_components/FormBodyHeading";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
+//Component for summarizing whole form and allowes user to send data
+
 export function Summary({
   formBodyPart,
   realEstateCategory,

@@ -1,3 +1,5 @@
+//NavigationButton components used in form part with inputs
+
 export function NavigationButton({
   text,
   onClick,

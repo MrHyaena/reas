@@ -1,6 +1,8 @@
 import { mapData } from "@/app/_data/mapData";
 import { DistrictType, RegionType } from "@/app/_types/FormularTypes";
 
+//Region select for mobile users
+
 export function RegionSelectMobile({
   regionData,
   setRegionData,

@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "./_components/Header/_components/Header";
 import { Metadata } from "next";
 
+//Metadata base for whole page
 export const metadata: Metadata = {
   title: "Reas: Nemovitosti digitálně",
   description:

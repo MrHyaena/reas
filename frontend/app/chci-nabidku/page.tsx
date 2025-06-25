@@ -1,5 +1,6 @@
 import FormCarousel from "../_components/Form/_components/FormCarousel";
 
+//chci-nabidku page component
 export default function Page() {
   return (
     <div className="bg-cover bg-center bg-[url('/hero.jpg')]">
