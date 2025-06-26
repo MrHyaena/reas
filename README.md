@@ -8,7 +8,7 @@ Create a small crud service, that has frontend form, backend server and mongodb 
 
 ## How to start
 
-Because of Docker usage, it is quite easy to start. Atleast if you have evertyhing that you need installed.
+Because of Docker usage, it is quite easy to start. Atleast if you have evertyhing that you need already installed.
 
 ### Prerequisities
 
@@ -42,7 +42,7 @@ This is the technology used
 - Tailwind
 - TypeScript
 
-##x Backend
+### Backend
 
 - Koa
 - TypeScript
