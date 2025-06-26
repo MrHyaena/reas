@@ -2,14 +2,14 @@ import React from "react";
 import { beforeEach, describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { RealEstateCategory } from "../../_components/RealEstateCategory";
+import { EstateType } from "../../_components/EstateType";
 
 describe("Summary integration test", () => {
   beforeEach(() => {
     render(
-      <RealEstateCategory
-        setRealEstateCategory={() => {}}
-        realEstateCategory={{ name: "", value: "" }}
+      <EstateType
+        setEstateType={() => {}}
+        estateType={{ name: "", value: "" }}
         setFormBodyPart={() => {}}
         formBodyPart={2}
       />

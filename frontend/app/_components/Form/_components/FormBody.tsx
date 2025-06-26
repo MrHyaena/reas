@@ -4,12 +4,12 @@ import React, { useState } from "react";
 
 import {
   DistrictType,
+  EstateTypeType,
   PersonalInfoType,
-  RealEstateCategoryType,
   RegionType,
 } from "../../../_types/FormularTypes";
 import { PersonalInfo } from "../../FormPersonalInformation/_components/PersonalInfo";
-import { RealEstateCategory } from "../../FormRealEstateCategory/_components/RealEstateCategory";
+import { EstateType } from "../../FormEstateType/_components/EstateType";
 import { Summary } from "../../FormSummary/_components/Summary";
 import { RepublicMap } from "../../FormMap/_components/RepublicMap";
 
@@ -25,11 +25,10 @@ export function FormBody() {
   });
 
   //Type of real estate state
-  const [realEstateCategory, setRealEstateCategory] =
-    useState<RealEstateCategoryType>({
-      name: "",
-      value: "",
-    });
+  const [estateType, setEstateType] = useState<EstateTypeType>({
+    name: "",
+    value: "",
+  });
 
   //Okres State
   const [district, setDistrict] = useState<DistrictType>({
@@ -57,11 +56,11 @@ export function FormBody() {
         />
       )}
       {formBodyPart == 1 && (
-        <RealEstateCategory
+        <EstateType
           setFormBodyPart={setFormBodyPart}
           formBodyPart={formBodyPart}
-          realEstateCategory={realEstateCategory}
-          setRealEstateCategory={setRealEstateCategory}
+          estateType={estateType}
+          setEstateType={setEstateType}
         />
       )}
       {formBodyPart == 2 && (
@@ -79,7 +78,7 @@ export function FormBody() {
           personalInfo={personalInfo}
           region={region}
           district={district}
-          realEstateCategory={realEstateCategory}
+          estateType={estateType}
           formBodyPart={formBodyPart}
           setFormBodyPart={setFormBodyPart}
         />

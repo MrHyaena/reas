@@ -7,7 +7,7 @@ export type PersonalInfoType = {
 
 export type LeadType = {
   personalInfo: PersonalInfoType;
-  realEstateCategory: string;
+  estateType: string;
   region: string;
   district: string;
 };

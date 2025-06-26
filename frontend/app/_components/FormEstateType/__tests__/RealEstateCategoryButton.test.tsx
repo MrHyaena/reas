@@ -1,12 +1,12 @@
 import React from "react";
 import { beforeEach, describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { RealEstateCategoryButton } from "../_components/RealEstateCategoryButton";
+import { EstateTypeButton } from "../_components/EstateTypeButton";
 
 describe("RealEstateCategoryButton rendering", () => {
   beforeEach(() => {
     render(
-      <RealEstateCategoryButton
+      <EstateTypeButton
         name="byt"
         value="flat"
         selected={true}

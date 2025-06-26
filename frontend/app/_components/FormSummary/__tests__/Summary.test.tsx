@@ -13,7 +13,7 @@ describe("Summary rendering", () => {
     render(
       <Summary
         formBodyPart={3}
-        realEstateCategory={{ name: "category", value: "categoryValue" }}
+        estateType={{ name: "category", value: "categoryValue" }}
         region={{ name: "region", value: "regionValue" }}
         district={{ name: "district", value: "districtValue" }}
         personalInfo={{
@@ -68,7 +68,7 @@ describe("Summary rendering", () => {
   });
 
   it("Correct back button text", () => {
-    const element = screen.getByText("Zpet");
+    const element = screen.getByText("Zpět");
     expect(element).toBeInTheDocument();
   });
 

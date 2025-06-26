@@ -5,7 +5,7 @@ describe("leadReceive controller testing", () => {
   it("validation with no data", () => {
     const missingArray = leadReceiveValidation({
       personalInfo: { firstName: "", secondName: "", email: "", phone: "" },
-      realEstateCategory: "",
+      estateType: "",
       region: "",
       district: "",
     });
@@ -22,7 +22,7 @@ describe("leadReceive controller testing", () => {
         email: "email",
         phone: "999",
       },
-      realEstateCategory: "",
+      estateType: "",
       region: "",
       district: "",
     });
@@ -39,7 +39,7 @@ describe("leadReceive controller testing", () => {
         email: "email@gmail.com",
         phone: "999",
       },
-      realEstateCategory: "",
+      estateType: "",
       region: "",
       district: "",
     });
@@ -56,7 +56,7 @@ describe("leadReceive controller testing", () => {
         email: "email@gmail.com",
         phone: "999999999",
       },
-      realEstateCategory: "",
+      estateType: "",
       region: "",
       district: "",
     });
@@ -73,7 +73,7 @@ describe("leadReceive controller testing", () => {
         email: "email@gmail.com",
         phone: "999999999",
       },
-      realEstateCategory: "item",
+      estateType: "item",
       region: "item",
       district: "item",
     });

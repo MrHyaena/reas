@@ -9,7 +9,7 @@ describe("Summary integration test", () => {
     render(
       <Summary
         formBodyPart={3}
-        realEstateCategory={{ name: "category", value: "categoryValue" }}
+        estateType={{ name: "category", value: "categoryValue" }}
         region={{ name: "region", value: "regionValue" }}
         district={{ name: "district", value: "districtValue" }}
         personalInfo={{

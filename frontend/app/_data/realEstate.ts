@@ -1,7 +1,7 @@
-import { RealEstateCategoryType } from "../_types/FormularTypes";
+import { EstateTypeType } from "../_types/FormularTypes";
 
 //Data used for RealEstate Category form part
-export const realEstateData: RealEstateCategoryType[] = [
+export const estateTypeData: EstateTypeType[] = [
   { name: "Byt", value: "flat" },
   { name: "Dům", value: "house" },
   { name: "Pozemek", value: "parcel" },

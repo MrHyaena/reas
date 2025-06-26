@@ -5,7 +5,7 @@ export type PersonalInfoType = {
   phone: string;
 };
 
-export type RealEstateCategoryType = {
+export type EstateTypeType = {
   name: string;
   value: string;
 };
@@ -22,12 +22,12 @@ export type RegionType = {
 
 export type DataForSubmitType = {
   personalInfo: PersonalInfoType;
-  realEstateCategory: string;
+  estateType: string;
   region: string;
   district: string;
 };
 
-export type RealEstateButtonType = {
+export type EstateTypeButtonType = {
   name: string;
   value: string;
   selected: boolean;

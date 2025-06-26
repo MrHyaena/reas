@@ -1,31 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { RealEstateCategoryType } from "../../../_types/FormularTypes";
 
 import { headings } from "@/app/_data/formBodyHeadings";
-import { realEstateData } from "@/app/_data/realEstate";
 import { FormBodyHeading } from "../../Headings/_components/FormBodyHeading";
 import { ErrorMessage } from "../../ErrorMessages/_components/ErrorMessage";
-import { RealEstateCategoryButton } from "./RealEstateCategoryButton";
 import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
+import { EstateTypeButton } from "./EstateTypeButton";
+import { estateTypeData } from "@/app/_data/realEstate";
+import { EstateTypeType } from "@/app/_types/FormularTypes";
 
 //Component for Form. Allowes user to pick realEstate category
 
-export function RealEstateCategory({
-  setRealEstateCategory,
-  realEstateCategory,
+export function EstateType({
+  setEstateType,
+  estateType,
   setFormBodyPart,
   formBodyPart,
 }: {
   setFormBodyPart: React.Dispatch<React.SetStateAction<number>>;
   formBodyPart: number;
-  realEstateCategory: RealEstateCategoryType;
-  setRealEstateCategory: React.Dispatch<
+  estateType: EstateTypeType;
+  setEstateType: React.Dispatch<
     React.SetStateAction<{ name: string; value: string }>
   >;
 }) {
-  const [type, setType] = useState<RealEstateCategoryType>(realEstateCategory);
+  const [type, setType] = useState<EstateTypeType>(estateType);
   const [error, setError] = useState<string | null>(null);
 
   function NextStep() {
@@ -36,7 +36,7 @@ export function RealEstateCategory({
     }
 
     setFormBodyPart(formBodyPart + 1);
-    setRealEstateCategory(type);
+    setEstateType(type);
   }
 
   return (
@@ -46,9 +46,9 @@ export function RealEstateCategory({
         {error != null && <ErrorMessage text={error} />}
 
         <div className="grid md:grid-cols-3 md:gap-8 gap-3 max-w-[700px] w-full">
-          {realEstateData.map((item) => {
+          {estateTypeData.map((item) => {
             return (
-              <RealEstateCategoryButton
+              <EstateTypeButton
                 key={item.name}
                 name={item.name}
                 value={item.value}
@@ -66,7 +66,7 @@ export function RealEstateCategory({
             text="Zpět"
             onClick={() => {
               setFormBodyPart(formBodyPart - 1);
-              setRealEstateCategory(type);
+              setEstateType(type);
             }}
           />
           <NavigationButton

@@ -55,7 +55,7 @@ export function leadReceiveValidation(data: LeadType) {
       missingArray.push("Formát telefonu");
     }
   }
-  if (!data.realEstateCategory) {
+  if (!data.estateType) {
     missingArray.push("Kategorie nemovitosti");
   }
   if (!data.region) {

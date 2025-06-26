@@ -24,7 +24,7 @@ const leadSchema = new Schema(
         required: true,
       },
     },
-    realEstateCategory: {
+    estateType: {
       type: String,
       required: true,
     },

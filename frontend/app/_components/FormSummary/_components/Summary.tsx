@@ -6,8 +6,8 @@ import { IoMdContact } from "react-icons/io";
 import {
   DataForSubmitType,
   DistrictType,
+  EstateTypeType,
   PersonalInfoType,
-  RealEstateCategoryType,
   RegionType,
 } from "../../../_types/FormularTypes";
 import { useState } from "react";
@@ -20,14 +20,14 @@ import { NavigationButton } from "../../Buttons/_components/NavigationButtons";
 
 export function Summary({
   formBodyPart,
-  realEstateCategory,
+  estateType,
   region,
   district,
   personalInfo,
   setFormBodyPart,
 }: {
   formBodyPart: number;
-  realEstateCategory: RealEstateCategoryType;
+  estateType: EstateTypeType;
   region: RegionType;
   district: DistrictType;
   personalInfo: PersonalInfoType;
@@ -43,7 +43,7 @@ export function Summary({
 
     const dataForSubmit: DataForSubmitType = {
       personalInfo: personalInfo,
-      realEstateCategory: realEstateCategory.value,
+      estateType: estateType.value,
       region: region.value,
       district: district.value,
     };
@@ -112,7 +112,7 @@ export function Summary({
               <div className="md:text-base text-sm">
                 <div className="grid grid-cols-2 not-last:border-b pb-1 border-slate-700">
                   <p>Typ nemovitosti:</p>
-                  <p data-testid="category">{realEstateCategory.name}</p>
+                  <p data-testid="category">{estateType.name}</p>
                 </div>
                 <div className="grid grid-cols-2 not-last:border-b pb-1 border-slate-700">
                   <p>Kraj:</p>
