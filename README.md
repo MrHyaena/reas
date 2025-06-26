@@ -26,6 +26,12 @@ Because of Docker usage, it is quite easy to start. Atleast if you have evertyhi
 6. Open the browser and search for `http://localhost:3000`
 7. Now play!
 
+## Warning
+
+- App is setup to run from the get go in local environment without any changes
+- Databse username and login for root user is set in docker-compose file under MONGO_INITDB_ROOT_USERNAME and MONGO_INITDB_ROOT_PASSWORD
+- If you want different login details, change these two variables from admin to something else
+
 ## Technology
 
 This is the technology used
