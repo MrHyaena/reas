@@ -89,7 +89,7 @@ export function Summary({
       )}
       {dataOk ? (
         <>
-          <div className="flex flex-col items-center justify-center gap-10 w-full overflow-hidden h-full">
+          <div className="flex flex-col items-center justify-center gap-10 w-full h-full">
             <h5 className="text-textLight">
               Děkujeme za důvěru, brzy se Vám ozveme!
             </h5>
@@ -98,13 +98,13 @@ export function Summary({
       ) : (
         <div
           data-testid="summaryBlock"
-          className="flex flex-col items-center gap-10 w-full overflow-hidden"
+          className="flex flex-col items-center gap-10 w-full"
         >
           <FormBodyHeading text={headings[formBodyPart]} />
           {error && <ErrorMessage text={error} />}
 
           <div className="flex flex-col gap-5 w-full md:min-w-[50%] md:w-auto">
-            <div className="animate-fallFromLeft bg-slate-800/80 text-textLight font-oswald text-xl border rounded-md border-slate-600 md:p-5 p-3">
+            <div className="animate-scaleUp bg-slate-800/80 text-textLight font-oswald text-xl border rounded-md border-slate-600 md:p-5 p-3">
               <div className="flex items-center pb-2 mb-3 border-b border-slate-600 gap-2">
                 <FaHouseChimney className="text-primary" />
                 <h5 className="">Nemovitost</h5>
@@ -124,7 +124,7 @@ export function Summary({
                 </div>
               </div>
             </div>
-            <div className="animate-fallFromRight bg-slate-800/80 text-textLight font-oswald text-xl border rounded-md border-slate-600 md:p-5 p-3">
+            <div className="animate-scaleUp bg-slate-800/80 text-textLight font-oswald text-xl border rounded-md border-slate-600 md:p-5 p-3">
               <div className="flex items-center pb-2 mb-3 border-b border-slate-600 gap-2">
                 <IoMdContact className="text-primary" />
                 <h5 className="">Kontaktní údaje</h5>
@@ -152,7 +152,7 @@ export function Summary({
 
           <div className="grid grid-cols-2 gap-4 md:text-lg text-md font-semibold w-full md:w-auto">
             <NavigationButton
-              text="Zpet"
+              text="Zpět"
               onClick={() => {
                 setFormBodyPart(formBodyPart - 1);
               }}
