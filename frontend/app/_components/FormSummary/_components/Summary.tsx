@@ -68,7 +68,8 @@ export function Summary({
       if (!response.ok) {
         setError(json.message ?? "Něco se pokazilo. Zkuste to prosím později.");
       }
-    } catch {
+    } catch (err) {
+      console.log(err);
       setError("Chyba je na naší straně. Zkuste to prosím později.");
     } finally {
       setLoading(false);
