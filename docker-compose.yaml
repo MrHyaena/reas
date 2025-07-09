@@ -19,7 +19,7 @@ services:
         NEXT_PUBLIC_SERVER: ${NEXT_PUBLIC_SERVER}
     container_name: client
     restart: always
-    env_file: .env
+    env_file: ./frontend/.env
     ports:
       - "3000:3000"
     environment:
