@@ -15,15 +15,16 @@ services:
     build:
       context: ./frontend
       args:
-        NEXT_PUBLIC_WEBSITE: http://91.99.198.196:3000
-        NEXT_PUBLIC_SERVER: http://91.99.198.196:4000
+        NEXT_PUBLIC_WEBSITE: ${NEXT_PUBLIC_WEBSITE}
+        NEXT_PUBLIC_SERVER: ${NEXT_PUBLIC_SERVER}
     container_name: client
     restart: always
+    env_file: .env
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_WEBSITE=http://91.99.198.196:3000
-      - NEXT_PUBLIC_SERVER=http://91.99.198.196:4000
+      - NEXT_PUBLIC_WEBSITE=${NEXT_PUBLIC_WEBSITE}
+      - NEXT_PUBLIC_SERVER=${NEXT_PUBLIC_SERVER}
     stdin_open: true
     tty: true
 
