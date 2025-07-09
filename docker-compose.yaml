@@ -12,7 +12,11 @@ services:
 
   #CLIENT image and container
   client:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_WEBSITE: http://client:3000
+        NEXT_PUBLIC_SERVER: http://server:4000
     container_name: client
     restart: always
     ports:

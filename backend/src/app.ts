@@ -13,7 +13,7 @@ app.use(json());
 app.use(bodyParser());
 
 //Cors rules
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 //AllRouter that unites all routers into this one
 app.use(allRouter.routes()).use(allRouter.allowedMethods());
